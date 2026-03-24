@@ -3,3 +3,33 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Parent = Flexbox container */
+.team-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Child items = content only */
+.team-card {
+  padding: 16px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+/* Why this works:
+- Flexbox is only on .team-container (the parent)
+- .team-card is reused for every person (no duplicate classes)
+- Cards are treated as items inside a layout system, not individual flex containers
+- Layout control (Flexbox) is separated from content styling */
+
+/* Common mistake (what NOT to do):
+.team-card {
+  display: flex; ❌ unnecessary here
+}
+
+Unless you're arranging multiple things inside the card, Flexbox does not belong there.
+
+*/
